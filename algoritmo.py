@@ -43,7 +43,7 @@ class Problema:
             return None
         return acciones_estado[accion.nombre] 
 
-        
+
 # clase nodo 
 class Nodo:
     def __init__(self, estado ,accion=None, acciones=None, padre=None):
@@ -131,7 +131,8 @@ def muestra_solucion(objetivo=None):
         nodo = nodo.padre
 
 
-if __name__== '__main__':
+if __name__== '__main__':    
+    
     accN = Accion('N')
     accS = Accion('S')
     accE = Accion('E')
@@ -142,91 +143,34 @@ if __name__== '__main__':
     accSo = Accion('So')
 
 
-    lanoi = Estado('lanoi'),[accNe]
-    nahoi= Estado('Nahoi'),[accNe,accN]
-    run = Estado('run'),[accNe,accN]
-    milos = Estado('milos'),[accNe,accN]
-    gido = Estado('gido'),[accNe,accN]
-    kuart = Estado('kuart'),[accNe,accN]
-    boom = Estado('boom'),[accNe,accN]
-    gorun = Estado('gorun'),[accNe,accN]
-    shipos = Estado('shipos'),[accNe,accN]
-    nookos = Estado('nokos'),[accNe,accN]
-    paris = Estado('paris'),[accNe,accN]
-    kamin= Estado('kamin'),[accNe,accN]
-    tarios = Estado('tarios'),[accNe,accN]
-    perana = Estado('perana'),[accNe,accN]
-    kadan = Estado('kadan'),[accNe,accN]
-    tawa = Estado('tawa'),[accSo,accSe]
-    teer = Estado('teer'),[accSo,accSe]
-    noria = Estado('roria'),[accNo,accSo,accE]
-    kokos = Estado('kokos'),[accO]
+    Quito = Estado('quito'),[accNe]
+    terminal= Estado('terminal'),[accNe,accN]
+    Sdomingo = Estado('Sdomingo'),[accNe,accN]
+    puertoQuito = Estado('puertoQuito'),[accNe,accN]
+    Bancos = Estado('Bnacos'),[accNe,accN]
+    Merced = Estado('Merced'),[accNe,accN]
+    Tandapi = Estado('Tandapi'),[accNe,accN]
+    alluriquin = Estado('alluriquin'),[accNe,accN]
+    Salcedo = Estado('salcedo'),[accNe,accN]
+    Ambato = Estado('ambato'),[accNe,accN]
+    Latacunga = Estado('latacunga'),[accNe,accN]
+    Riobamba= Estado('riobanba'),[accNe,accN]
+    Azogues = Estado('azogues'),[accNe,accN]
+    Esmeraldas = Estado('esmeraldas'),[accNe,accN]
+    Guayaquil = Estado('guayaquil'),[accNe,accN]
+    cuenca= Estado('cuenca'),[accSo,accSe]
+    machala = Estado('machala'),[accSo,accSe]
+    babahoyo  = Estado('babahoyo'),[accNo,accSo,accE]
+    Ibarra = Estado(''),[accO]
 
-    acciones = {'lanoi':{'Ne':nahoi},
-                'nahoi':{'so':lanoi,
-                         'no':run,
-                         'ne':milos},
-                'run':{'No':gido,
-                        'ne':kuart,
-                        'e':milos,
-                        'se':nahoi},
-                'milos':{'0':run,
-                        'so':nahoi,
-                        'n':kadan },
-                'gido':{ 'n':nookos,
-                          'e':kuart,
-                          'se':run},
-                'kuart':{ '0':gido,
-                          'so':run,
-                          'ne':boom},
-
-                'bom':{ 'n':gorun,
-                          'so':kuart},
-
-                'gorun':{ 'o':shipos,
-                          's':boom},         
-
-                'shipos':{ 'o':shipos,
-                          'e':boom},    
-
-                'nokos':{ 'no':paris,
-                           's':gido,
-                          'e':shipos},
-                          
-                'paris':{ 'no':kamin,
-                           's0':nookos},
-                
-                'kamin':{ 'se':paris,
-                           's0':tawa,
-                          '0':tarios}, 
-                                                                    
-                'tarios':{ 'o':kamin,
-                           'n0':tawa,
-                           'ne':noria,
-                          'e':perana}, 
-
-                 'perana':{ 'o':tarios,
-                           's':kadan},
-
-                 'kadan':{ 'o':perana,
-                           's':milos},
-                                                                                  
-                 'tawa':{ 'so': kamin,
-                           'se':tarios,
-                          'ne':teer},  
-
-                 'theer':{ 'so':tawa,
-                           'se':noria},         
-
-                  'roria':{ 'no': teer,
-                           'so':tarios,
-                          'e': kokos}, 
-                  'kokos':{'o':noria}}            
-               
+    acciones = {'Quito':{'Ne':terminal},
+                'terminal ':{'se','N':Sdomingo,
+                                       }
+    }
                            
         
-    objetivo_1 = [kokos]
-    problema_1 = Problema(lanoi, objetivo_1)
+    objetivo_1 = [Guayaquil]
+    problema_1 = Problema(Quito, objetivo_1)
 
 
 
